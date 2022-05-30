@@ -1,54 +1,72 @@
+:root {
+    --gray: rgb(139, 135, 135);
+}
 .profile {
-    font-size: 16px;
-    background-color: rgba(161, 161, 161, 0.8);
-    border-radius: 3px;
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid var(--gray);
+    border-radius: 5% 5% 0 0;
+    margin: 0 auto;
 }
 
 .description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 20px;
-    text-align: center;
+    width: 100%;
 }
 
 .avatar {
-    margin: 0 auto 15px auto;
+    display: block;
     width: 100px;
-    height: 100px;
+    max-width: 100%;
     border-radius: 50%;
 }
 
 .name {
-    margin-bottom: 10px;
-    font-weight: 700;
+    font-size: 24px;
+    margin: 0;
+    margin-bottom: 15px;
+    color: #000000;
 }
 
-.tag {
-    margin-bottom: 10px;
-}
 
-.tag,
 .location {
-    color: rgb(143, 143, 143);
+    font-size: 16px;
+    color: var(--gray);
+    margin: 0;
+}
+.tag {
+    composes: location;
 }
 
 .stats {
-    padding: 0;
-    list-style-type: none;
     display: flex;
+    justify-content: space-evenly;
+
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
 }
 
 .stats li {
+    flex-basis: calc(100% / 3);
+    text-align: center;
     padding: 10px;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    border: 1px solid gray;
+    border: 1px solid var(--gray);
+    background-color: #cccccc;
 }
 
 .label {
-    color: rgb(143, 143, 143);
+    composes:location;
+}
+.quantity {
+    display: block;
+    color: #000000;
 }
 
 .quantity {
