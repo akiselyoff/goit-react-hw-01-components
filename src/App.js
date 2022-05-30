@@ -1,5 +1,5 @@
-import Profile from './components/Profile';
-import user from './user.json';
+import Profile from './components/Profile/Profile';
+import user from './data/user.json';
 export default function App() {
   return (
     <Profile
@@ -8,6 +8,7 @@ export default function App() {
       location={user.location}
       avatar={user.avatar}
       stats={user.stats}
+      //   {...user} alternative use props
     />
   );
 }
