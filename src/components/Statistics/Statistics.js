@@ -7,14 +7,14 @@ export default function Statistic({ title, stats }) {
     <section className={s.statistics}>
       {title && <h2 className={s.title}>{title}</h2>}
       <ul className={s.statList}>
-        {stats.map(stat => (
+        {stats.map(({ id, label, percentage }) => (
           <li
             className={s.item}
-            key={stat.id}
+            key={id}
             style={{ backgroundColor: getRandomHexColor() }}
           >
-            <span className={s.label}>{stat.label}</span>
-            <span className={s.percentage}>{stat.percentage}%</span>
+            <span className={s.label}>{label}</span>
+            <span className={s.percentage}>{percentage}%</span>
           </li>
         ))}
       </ul>
@@ -23,12 +23,12 @@ export default function Statistic({ title, stats }) {
 }
 
 Statistic.propTypes = {
-  title: PropTypes.string,
+  title: PropTypes.string.isRequired,
   stats: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.string,
-      label: PropTypes.string,
-      percentage: PropTypes.number,
+      id: PropTypes.string.isRequired,
+      label: PropTypes.string.isRequired,
+      percentage: PropTypes.number.isRequired,
     }),
   ),
 };
